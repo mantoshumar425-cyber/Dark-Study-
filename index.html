@@ -4,306 +4,351 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dark Study — Free Study Resources</title>
+  <title>Dark Study — Learn. Practice. Succeed.</title>
+  <meta name="description" content="Dark Study — lectures, PDFs, notes, tests and useful study tools for students.">
+  <meta name="theme-color" content="#0b1020">
 
-  <meta name="description"
-        content="Dark Study — Free study resources, notes, batches, lectures and useful tools for students.">
-
-  <meta name="theme-color" content="#111827">
-
-  <link rel="icon" type="image/png" href="/logo.png">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="container nav">
+    <div class="nav-container">
 
-      <a href="/" class="brand">
-        <img src="/logo.png" alt="Dark Study Logo" class="logo"
-             onerror="this.style.display='none'">
+      <a href="#home" class="brand">
+        <img src="logo.png" alt="Dark Study Logo">
         <span>Dark Study</span>
       </a>
-
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#batches">Batches</a>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Contact</a>
-      </nav>
 
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">
         ☰
       </button>
-    </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#batches">Batches</a>
-      <a href="#resources">Resources</a>
-      <a href="#contact">Contact</a>
+      <nav class="nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#batches">Batches</a>
+        <a href="#lectures">Lectures</a>
+        <a href="#pdfs">PDFs</a>
+        <a href="#tests">Tests</a>
+        <a href="#tools">Tools</a>
+      </nav>
+
+      <button class="theme-btn" id="themeBtn" title="Toggle theme">
+        🌙
+      </button>
     </div>
   </header>
 
 
-  <!-- Hero -->
+  <!-- HERO -->
   <main>
 
     <section class="hero" id="home">
-      <div class="container hero-content">
+      <div class="hero-content">
 
-        <div class="hero-text">
-          <span class="badge">📚 Free Study Platform</span>
-
-          <h1>
-            Study Smarter with
-            <span>Dark Study</span>
-          </h1>
-
-          <p>
-            Access study resources, notes, lectures, batches and
-            useful learning materials — all in one place.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#batches" class="btn btn-primary">
-              Open Batches
-            </a>
-
-            <a href="#resources" class="btn btn-secondary">
-              Explore Resources
-            </a>
-          </div>
+        <div class="badge">
+          🎓 Learn • Practice • Succeed
         </div>
 
-        <div class="hero-card">
-          <div class="hero-icon">🎓</div>
-          <h3>Learn. Practice. Grow.</h3>
-          <p>
-            Your simple place for better study.
-          </p>
+        <h1>
+          Study Smarter with
+          <span>Dark Study</span>
+        </h1>
+
+        <p>
+          Lectures, PDFs, notes, tests and study tools —
+          everything you need in one place.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#batches" class="btn primary">
+            Explore Batches
+          </a>
+
+          <a href="#tests" class="btn secondary">
+            Practice Tests
+          </a>
         </div>
 
       </div>
     </section>
 
 
-    <!-- Quick Actions -->
-    <section class="quick-section">
-      <div class="container">
+    <!-- SEARCH -->
+    <section class="search-section">
+      <div class="search-box">
+        <span>🔎</span>
+        <input
+          type="search"
+          id="globalSearch"
+          placeholder="Search batches, lectures, PDFs or tests..."
+          autocomplete="off"
+        >
+        <button id="clearSearch">×</button>
+      </div>
 
-        <div class="section-heading">
-          <h2>Quick Access</h2>
-          <p>Everything you need for your studies.</p>
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+
+    <!-- QUICK ACCESS -->
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">QUICK ACCESS</span>
+          <h2>Everything in one place</h2>
         </div>
+      </div>
 
-        <div class="quick-grid">
+      <div class="quick-grid">
 
-          <a href="#batches" class="quick-card">
-            <div class="quick-icon">📖</div>
-            <h3>Study Batches</h3>
-            <p>Explore available batches.</p>
-          </a>
+        <button class="quick-card" data-scroll="batches">
+          <div class="quick-icon">📚</div>
+          <h3>All Batches</h3>
+          <p>Explore available classes and batches.</p>
+        </button>
 
-          <a href="#resources" class="quick-card">
-            <div class="quick-icon">📝</div>
-            <h3>Notes</h3>
-            <p>Access useful study notes.</p>
-          </a>
+        <button class="quick-card" data-scroll="lectures">
+          <div class="quick-icon">🎥</div>
+          <h3>Lectures</h3>
+          <p>Watch your study lectures.</p>
+        </button>
 
-          <a href="#resources" class="quick-card">
-            <div class="quick-icon">🎥</div>
-            <h3>Lectures</h3>
-            <p>Learn through video resources.</p>
-          </a>
+        <button class="quick-card" data-scroll="pdfs">
+          <div class="quick-icon">📄</div>
+          <h3>PDFs & Notes</h3>
+          <p>Read notes and study material.</p>
+        </button>
 
-          <a href="#resources" class="quick-card">
-            <div class="quick-icon">🛠️</div>
-            <h3>Study Tools</h3>
-            <p>Useful tools for students.</p>
-          </a>
+        <button class="quick-card" data-scroll="tests">
+          <div class="quick-icon">📝</div>
+          <h3>Tests</h3>
+          <p>Practice and check your preparation.</p>
+        </button>
 
-        </div>
       </div>
     </section>
 
 
-    <!-- Batches -->
+    <!-- BATCHES -->
     <section class="section" id="batches">
-      <div class="container">
 
-        <div class="section-heading">
-          <span class="small-label">LEARNING</span>
-          <h2>Study Batches</h2>
-          <p>Choose a batch and start learning.</p>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BATCHES</span>
+          <h2>All Batches</h2>
+          <p>Select your class or learning category.</p>
         </div>
 
-        <div class="cards-grid">
+        <span class="count" id="batchCount">0</span>
+      </div>
 
-          <article class="batch-card">
-            <div class="card-top">
-              <span class="class-tag">CLASS 10</span>
-              <span class="free-tag">FREE</span>
-            </div>
+      <div class="filters" id="batchFilters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="6">Class 6</button>
+        <button class="filter" data-filter="7">Class 7</button>
+        <button class="filter" data-filter="8">Class 8</button>
+        <button class="filter" data-filter="9">Class 9</button>
+        <button class="filter" data-filter="10">Class 10</button>
+        <button class="filter" data-filter="11">Class 11</button>
+        <button class="filter" data-filter="12">Class 12</button>
+        <button class="filter" data-filter="other">Other</button>
+      </div>
 
-            <h3>Class 10 Study Resources</h3>
+      <div class="card-grid" id="batchGrid"></div>
 
-            <p>
-              Notes, questions, revision material and useful
-              resources for Class 10 students.
-            </p>
-
-            <button class="open-btn"
-                    data-action="batch"
-                    data-name="Class 10 Study Resources">
-              Open Now →
-            </button>
-          </article>
+    </section>
 
 
-          <article class="batch-card">
-            <div class="card-top">
-              <span class="class-tag">ALL STUDENTS</span>
-              <span class="free-tag">FREE</span>
-            </div>
+    <!-- LECTURES -->
+    <section class="section alt" id="lectures">
 
-            <h3>Study Materials</h3>
-
-            <p>
-              Find useful educational resources and learning
-              materials in one place.
-            </p>
-
-            <button class="open-btn"
-                    data-action="batch"
-                    data-name="Study Materials">
-              Open Now →
-            </button>
-          </article>
-
-
-          <article class="batch-card">
-            <div class="card-top">
-              <span class="class-tag">COMING SOON</span>
-            </div>
-
-            <h3>More Batches</h3>
-
-            <p>
-              More courses and study resources will be added
-              soon.
-            </p>
-
-            <button class="open-btn disabled" disabled>
-              Coming Soon
-            </button>
-          </article>
-
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">VIDEO LEARNING</span>
+          <h2>Lectures</h2>
+          <p>Open a lecture and start learning.</p>
         </div>
+
+        <span class="count" id="lectureCount">0</span>
+      </div>
+
+      <div class="card-grid" id="lectureGrid"></div>
+
+    </section>
+
+
+    <!-- PDF -->
+    <section class="section" id="pdfs">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">STUDY MATERIAL</span>
+          <h2>PDFs & Notes</h2>
+          <p>Access notes and useful study material.</p>
+        </div>
+
+        <span class="count" id="pdfCount">0</span>
+      </div>
+
+      <div class="card-grid" id="pdfGrid"></div>
+
+    </section>
+
+
+    <!-- TESTS -->
+    <section class="section alt" id="tests">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PRACTICE</span>
+          <h2>Tests</h2>
+          <p>Test yourself and track your progress.</p>
+        </div>
+
+        <span class="count" id="testCount">0</span>
+      </div>
+
+      <div class="card-grid" id="testGrid"></div>
+
+    </section>
+
+
+    <!-- PROGRESS -->
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR STUDY</span>
+          <h2>Progress</h2>
+          <p>Your activity is stored locally on this device.</p>
+        </div>
+      </div>
+
+      <div class="progress-panel">
+
+        <div class="progress-stat">
+          <strong id="completedCount">0</strong>
+          <span>Completed</span>
+        </div>
+
+        <div class="progress-stat">
+          <strong id="bookmarkCount">0</strong>
+          <span>Bookmarks</span>
+        </div>
+
+        <div class="progress-stat">
+          <strong id="testScoreCount">0</strong>
+          <span>Tests Taken</span>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-bar">
+            <div id="progressBar"></div>
+          </div>
+          <span id="progressText">0% complete</span>
+        </div>
+
       </div>
     </section>
 
 
-    <!-- Resources -->
-    <section class="section resources-section" id="resources">
-      <div class="container">
+    <!-- TOOLS -->
+    <section class="section alt" id="tools">
 
-        <div class="section-heading">
-          <span class="small-label">RESOURCES</span>
-          <h2>Student Resources</h2>
-          <p>Helpful resources for your everyday study.</p>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">STUDY TOOLS</span>
+          <h2>Useful Tools</h2>
         </div>
+      </div>
 
-        <div class="resource-grid">
+      <div class="tools-grid">
 
-          <div class="resource-card">
-            <span>📚</span>
-            <h3>Notes</h3>
-            <p>Chapter-wise study notes and revision material.</p>
-            <button data-action="resource" data-name="Notes">
-              Explore
-            </button>
-          </div>
+        <button class="tool-card" id="calculatorBtn">
+          <span>🧮</span>
+          <strong>Calculator</strong>
+          <small>Quick calculations</small>
+        </button>
 
-          <div class="resource-card">
-            <span>❓</span>
-            <h3>Important Questions</h3>
-            <p>Practice important questions for exams.</p>
-            <button data-action="resource" data-name="Important Questions">
-              Explore
-            </button>
-          </div>
+        <button class="tool-card" id="timerBtn">
+          <span>⏱️</span>
+          <strong>Study Timer</strong>
+          <small>Focus sessions</small>
+        </button>
 
-          <div class="resource-card">
-            <span>🎯</span>
-            <h3>Exam Preparation</h3>
-            <p>Useful resources to help you prepare better.</p>
-            <button data-action="resource" data-name="Exam Preparation">
-              Explore
-            </button>
-          </div>
+        <button class="tool-card" id="bookmarkBtn">
+          <span>⭐</span>
+          <strong>Bookmarks</strong>
+          <small>Saved resources</small>
+        </button>
 
-        </div>
+        <button class="tool-card" id="notesBtn">
+          <span>📝</span>
+          <strong>My Notes</strong>
+          <small>Personal notes</small>
+        </button>
+
       </div>
     </section>
 
 
-    <!-- App Download -->
-    <section class="download-section">
-      <div class="container download-box">
+    <!-- BACKUP -->
+    <section class="section">
+      <div class="backup-panel">
 
         <div>
-          <span class="small-label">MOBILE</span>
-          <h2>Study Anywhere</h2>
+          <span class="eyebrow">YOUR DATA</span>
+          <h2>Backup & Restore</h2>
           <p>
-            Use Dark Study on your mobile and access your
-            study resources wherever you go.
+            Export your bookmarks, progress, notes and settings.
+            You can import the backup on another device.
           </p>
         </div>
 
-        <a href="#" class="btn btn-primary" id="downloadBtn">
-          📱 Download App
-        </a>
+        <div class="backup-buttons">
+          <button class="btn primary" id="exportBtn">
+            ⬇ Export Backup
+          </button>
+
+          <button class="btn secondary" id="importBtn">
+            ⬆ Import Backup
+          </button>
+
+          <input
+            type="file"
+            id="importFile"
+            accept=".json,application/json"
+            hidden
+          >
+        </div>
 
       </div>
     </section>
 
 
-    <!-- Contact -->
-    <section class="section contact-section" id="contact">
-      <div class="container">
+    <!-- APP -->
+    <section class="app-section">
+      <div class="app-card">
 
-        <div class="section-heading">
-          <span class="small-label">CONTACT</span>
-          <h2>Contact Dark Study</h2>
-          <p>Have a question or suggestion?</p>
+        <div class="app-logo">
+          <img src="logo.png" alt="Dark Study">
         </div>
 
-        <div class="contact-box">
-
-          <div class="contact-item">
-            <span>📱</span>
-            <div>
-              <h3>Telegram</h3>
-              <p>Join our Telegram community.</p>
-              <a href="#" id="telegramLink">Join Now →</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <span>💬</span>
-            <div>
-              <h3>Support</h3>
-              <p>For questions and suggestions.</p>
-              <a href="mailto:support@darkstudy.in">
-                Email Us →
-              </a>
-            </div>
-          </div>
-
+        <div>
+          <span class="eyebrow">DARK STUDY</span>
+          <h2>Everything you need to study.</h2>
+          <p>
+            Lectures, PDFs, tests and useful tools —
+            optimized for mobile learning.
+          </p>
         </div>
+
+        <button class="btn primary" id="appBtn">
+          Download App
+        </button>
 
       </div>
     </section>
@@ -311,37 +356,60 @@
   </main>
 
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-content">
+
+    <div class="footer-content">
 
       <div>
-        <h3>Dark Study</h3>
-        <p>Learn better. Study smarter.</p>
+        <div class="brand footer-brand">
+          <img src="logo.png" alt="Dark Study">
+          <span>Dark Study</span>
+        </div>
+
+        <p>
+          Learn. Practice. Succeed.
+        </p>
       </div>
 
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#batches">Batches</a>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Contact</a>
+        <a href="#lectures">Lectures</a>
+        <a href="#pdfs">PDFs</a>
+        <a href="#tests">Tests</a>
       </div>
 
     </div>
 
     <div class="copyright">
-      © <span id="year"></span> Dark Study. All rights reserved.
+      © <span id="year"></span> Dark Study. All Rights Reserved.
     </div>
+
   </footer>
 
 
-  <!-- Toast -->
-  <div class="toast" id="toast">
-    <span id="toastMessage">Coming soon...</span>
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-box">
+
+      <button class="modal-close" id="modalClose">
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+
+    </div>
   </div>
 
 
-  <script src="/script.js"></script>
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
