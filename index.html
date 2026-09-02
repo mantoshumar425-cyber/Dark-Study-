@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Study Stark - Learn. Practice. Succeed.</title>
+
+  <meta name="description"
+        content="Study Stark - Access high-quality study materials, practice tests, lectures and expert guidance all in one place.">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #eeeeee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #111827;
+    }
+
+    .login-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .login-btn:hover {
+      background: #f3f4f6;
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1050px;
+      margin: auto;
+      padding: 85px 22px 70px;
+      text-align: center;
+    }
+
+    .tagline {
+      font-size: 17px;
+      font-weight: 600;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      font-size: 18px;
+      color: #6b7280;
+    }
+
+    /* MAIN CARD */
+    .study-section {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 20px 22px 70px;
+    }
+
+    .study-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 42px 30px;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+    }
+
+    .study-card h2 {
+      font-size: 32px;
+      margin-bottom: 13px;
+    }
+
+    .study-card p {
+      max-width: 650px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 11px 20px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #111827;
+    }
+
+    .btn-outline:hover {
+      background: #f9fafb;
+      transform: translateY(-2px);
+    }
+
+    .btn-donate {
+      border: 1px solid #fecdd3;
+      background: #fff1f2;
+      color: #be123c;
+    }
+
+    .btn-donate:hover {
+      background: #ffe4e6;
+      transform: translateY(-2px);
+    }
+
+    /* APP SECTION */
+    .app-section {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 10px 22px 80px;
+    }
+
+    .app-card {
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      padding: 45px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-info h2 {
+      font-size: 31px;
+      margin-bottom: 12px;
+    }
+
+    .app-info p {
+      color: #6b7280;
+      max-width: 570px;
+    }
+
+    .app-logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 25px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .app-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .download-btn {
+      margin-top: 23px;
+      display: inline-flex;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: #111827;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #eeeeee;
+      background: #ffffff;
+      padding: 35px 22px;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .footer-text {
+      color: #6b7280;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    .copyright {
+      margin-top: 22px;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 15px 16px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .login-btn {
+        padding: 9px 13px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 62px 18px 48px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .study-section,
+      .app-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .study-card {
+        padding: 32px 20px;
+      }
+
+      .study-card h2 {
+        font-size: 27px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .app-card {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 35px 20px;
+      }
+
+      .app-info p {
+        margin: auto;
+      }
+
+      .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .app-logo {
+        width: 105px;
+        height: 105px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">STUDY STARK</a>
+
+      <a
+        href="https://vidcloud.eu.org/"
+        class="login-btn">
+        Login / Add Batches
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="tagline">🎓 Learn. Practice. Succeed.</div>
+
+      <h1>
+        Study Stark:
+        <span>Learn More.</span>
+        Achieve More.
+      </h1>
+
+      <p>
+        Access high-quality study materials, practice tests,
+        and expert guidance — all in one place.
+      </p>
+    </section>
+
+    <!-- ACTIONS -->
+    <section class="study-section">
+
+      <div class="study-card">
+
+        <h2>Start Learning Today</h2>
+
+        <p>
+          Explore lectures, batches, PDFs and useful resources
+          designed to help you learn better and prepare smarter.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://vidcloud.eu.org/"
+            class="btn btn-primary">
+            🔥 Open Now →
+          </a>
+
+          <a
+            href="https://telegram.me/"
+            target="_blank"
+            class="btn btn-outline">
+            Join Telegram
+          </a>
+
+          <a
+            href="#"
+            class="btn btn-donate">
+            ❤️ Donate Batch
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- APP -->
+    <section class="app-section">
+
+      <div class="app-card">
+
+        <div class="app-info">
+
+          <h2>Study Stark App</h2>
+
+          <p>
+            Everything You Need to Study — Lectures, PDFs & Tests.
+            Download the official app and start learning today.
+          </p>
+
+          <a
+            href="https://vidcloud.eu.org/"
+            class="download-btn">
+            Download for Android (APK)
+          </a>
+
+        </div>
+
+        <div class="app-logo">
+          <!-- अपनी logo image यहाँ डाल सकते हो -->
+          <img
+            src="logo.png"
+            alt="Study Stark Logo"
+            onerror="this.style.display='none'">
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-title">
+      Study Stark
+    </div>
+
+    <div class="footer-text">
+      The top platform for accessible learning and study resources.
+    </div>
+
+    <div class="footer-links">
+
+      <a href="https://telegram.me/" target="_blank">
+        Contact Us
+      </a>
+
+      <a href="https://telegram.me/" target="_blank">
+        Telegram Channel
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      Copyright © 2026 Study Stark. All Rights Reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>
