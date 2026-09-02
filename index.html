@@ -4,351 +4,408 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dark Study — Learn. Practice. Succeed.</title>
-  <meta name="description" content="Dark Study — lectures, PDFs, notes, tests and useful study tools for students.">
-  <meta name="theme-color" content="#0b1020">
+  <title>Dark Study- Learn. Practice. Succeed.</title>
 
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description"
+        content="Dark Study - Access high-quality study materials, practice tests, lectures and expert guidance in one place.">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #eeeeee;
+      background: rgba(255,255,255,0.96);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .login-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 9px;
+      background: #111827;
+      color: #ffffff;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 75px 0 60px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: #111827;
+      color: white;
+    }
+
+    .telegram {
+      background: #eaf6ff;
+      color: #1685d7;
+    }
+
+    .donate {
+      background: #fff0f3;
+      color: #e6395b;
+    }
+
+    /* Main section */
+    .section {
+      padding: 35px 0 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #667085;
+    }
+
+    /* App card */
+    .app-card {
+      max-width: 850px;
+      margin: auto;
+      padding: 38px;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      background: #fafafa;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+    .logo-box {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #eeeeee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-placeholder {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .app-card h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .app-card p {
+      color: #667085;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .download {
+      background: #111827;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #eeeeee;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      color: #98a2b3;
+      font-size: 13px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header {
+        padding: 17px 0;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      .login-btn {
+        padding: 9px 13px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 55px 0 45px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .app-card {
+        padding: 28px 20px;
+      }
+
+      .app-card h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="nav-container">
+  <!-- Header -->
+  <header>
+    <div class="container nav">
 
-      <a href="#home" class="brand">
-        <img src="logo.png" alt="Dark Study Logo">
-        <span>Dark Study</span>
+      <a href="/" class="brand">
+        DARK STUDY 
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        ☰
-      </button>
+      <a href="#" class="login-btn">
+        Login / Add Batches
+      </a>
 
-      <nav class="nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#batches">Batches</a>
-        <a href="#lectures">Lectures</a>
-        <a href="#pdfs">PDFs</a>
-        <a href="#tests">Tests</a>
-        <a href="#tools">Tools</a>
-      </nav>
-
-      <button class="theme-btn" id="themeBtn" title="Toggle theme">
-        🌙
-      </button>
     </div>
   </header>
 
 
-  <!-- HERO -->
+  <!-- Hero -->
   <main>
 
-    <section class="hero" id="home">
-      <div class="hero-content">
+    <section class="hero">
+      <div class="container">
 
-        <div class="badge">
-          🎓 Learn • Practice • Succeed
+        <div class="tagline">
+          🎓 Learn. Practice. Succeed.
         </div>
 
         <h1>
-          Study Smarter with
-          <span>Dark Study</span>
+         Dark Study:
+          <span>Learn More. Achieve More.</span>
         </h1>
 
         <p>
-          Lectures, PDFs, notes, tests and study tools —
-          everything you need in one place.
+          Access high-quality study materials, practice tests,
+          lectures and expert guidance — all in one place.
         </p>
 
         <div class="hero-buttons">
-          <a href="#batches" class="btn primary">
-            Explore Batches
+
+          <a
+            class="btn primary"
+            href="https://vidcloud.eu.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            🔥 Open Now →
           </a>
 
-          <a href="#tests" class="btn secondary">
-            Practice Tests
+          <a
+            class="btn telegram"
+            href="https://telegram.me/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Join Telegram
           </a>
+
+          <a
+            class="btn donate"
+            href="#">
+            ❤️ Donate Batch
+          </a>
+
         </div>
 
       </div>
     </section>
 
 
-    <!-- SEARCH -->
-    <section class="search-section">
-      <div class="search-box">
-        <span>🔎</span>
-        <input
-          type="search"
-          id="globalSearch"
-          placeholder="Search batches, lectures, PDFs or tests..."
-          autocomplete="off"
-        >
-        <button id="clearSearch">×</button>
-      </div>
-
-      <div id="searchResults" class="search-results"></div>
-    </section>
-
-
-    <!-- QUICK ACCESS -->
+    <!-- App -->
     <section class="section">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">QUICK ACCESS</span>
-          <h2>Everything in one place</h2>
-        </div>
-      </div>
+      <div class="container">
 
-      <div class="quick-grid">
+        <div class="app-card">
 
-        <button class="quick-card" data-scroll="batches">
-          <div class="quick-icon">📚</div>
-          <h3>All Batches</h3>
-          <p>Explore available classes and batches.</p>
-        </button>
+          <div class="logo-box">
+            <img
+              src="logo.png"
+              alt="Study Stark Logo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
 
-        <button class="quick-card" data-scroll="lectures">
-          <div class="quick-icon">🎥</div>
-          <h3>Lectures</h3>
-          <p>Watch your study lectures.</p>
-        </button>
-
-        <button class="quick-card" data-scroll="pdfs">
-          <div class="quick-icon">📄</div>
-          <h3>PDFs & Notes</h3>
-          <p>Read notes and study material.</p>
-        </button>
-
-        <button class="quick-card" data-scroll="tests">
-          <div class="quick-icon">📝</div>
-          <h3>Tests</h3>
-          <p>Practice and check your preparation.</p>
-        </button>
-
-      </div>
-    </section>
-
-
-    <!-- BATCHES -->
-    <section class="section" id="batches">
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">BATCHES</span>
-          <h2>All Batches</h2>
-          <p>Select your class or learning category.</p>
-        </div>
-
-        <span class="count" id="batchCount">0</span>
-      </div>
-
-      <div class="filters" id="batchFilters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="6">Class 6</button>
-        <button class="filter" data-filter="7">Class 7</button>
-        <button class="filter" data-filter="8">Class 8</button>
-        <button class="filter" data-filter="9">Class 9</button>
-        <button class="filter" data-filter="10">Class 10</button>
-        <button class="filter" data-filter="11">Class 11</button>
-        <button class="filter" data-filter="12">Class 12</button>
-        <button class="filter" data-filter="other">Other</button>
-      </div>
-
-      <div class="card-grid" id="batchGrid"></div>
-
-    </section>
-
-
-    <!-- LECTURES -->
-    <section class="section alt" id="lectures">
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">VIDEO LEARNING</span>
-          <h2>Lectures</h2>
-          <p>Open a lecture and start learning.</p>
-        </div>
-
-        <span class="count" id="lectureCount">0</span>
-      </div>
-
-      <div class="card-grid" id="lectureGrid"></div>
-
-    </section>
-
-
-    <!-- PDF -->
-    <section class="section" id="pdfs">
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">STUDY MATERIAL</span>
-          <h2>PDFs & Notes</h2>
-          <p>Access notes and useful study material.</p>
-        </div>
-
-        <span class="count" id="pdfCount">0</span>
-      </div>
-
-      <div class="card-grid" id="pdfGrid"></div>
-
-    </section>
-
-
-    <!-- TESTS -->
-    <section class="section alt" id="tests">
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">PRACTICE</span>
-          <h2>Tests</h2>
-          <p>Test yourself and track your progress.</p>
-        </div>
-
-        <span class="count" id="testCount">0</span>
-      </div>
-
-      <div class="card-grid" id="testGrid"></div>
-
-    </section>
-
-
-    <!-- PROGRESS -->
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">YOUR STUDY</span>
-          <h2>Progress</h2>
-          <p>Your activity is stored locally on this device.</p>
-        </div>
-      </div>
-
-      <div class="progress-panel">
-
-        <div class="progress-stat">
-          <strong id="completedCount">0</strong>
-          <span>Completed</span>
-        </div>
-
-        <div class="progress-stat">
-          <strong id="bookmarkCount">0</strong>
-          <span>Bookmarks</span>
-        </div>
-
-        <div class="progress-stat">
-          <strong id="testScoreCount">0</strong>
-          <span>Tests Taken</span>
-        </div>
-
-        <div class="progress-bar-wrap">
-          <div class="progress-bar">
-            <div id="progressBar"></div>
+            <span class="logo-placeholder" style="display:none;">
+              Logo
+            </span>
           </div>
-          <span id="progressText">0% complete</span>
-        </div>
 
-      </div>
-    </section>
+          <h2>
+            Study Stark App
+          </h2>
 
-
-    <!-- TOOLS -->
-    <section class="section alt" id="tools">
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">STUDY TOOLS</span>
-          <h2>Useful Tools</h2>
-        </div>
-      </div>
-
-      <div class="tools-grid">
-
-        <button class="tool-card" id="calculatorBtn">
-          <span>🧮</span>
-          <strong>Calculator</strong>
-          <small>Quick calculations</small>
-        </button>
-
-        <button class="tool-card" id="timerBtn">
-          <span>⏱️</span>
-          <strong>Study Timer</strong>
-          <small>Focus sessions</small>
-        </button>
-
-        <button class="tool-card" id="bookmarkBtn">
-          <span>⭐</span>
-          <strong>Bookmarks</strong>
-          <small>Saved resources</small>
-        </button>
-
-        <button class="tool-card" id="notesBtn">
-          <span>📝</span>
-          <strong>My Notes</strong>
-          <small>Personal notes</small>
-        </button>
-
-      </div>
-    </section>
-
-
-    <!-- BACKUP -->
-    <section class="section">
-      <div class="backup-panel">
-
-        <div>
-          <span class="eyebrow">YOUR DATA</span>
-          <h2>Backup & Restore</h2>
           <p>
-            Export your bookmarks, progress, notes and settings.
-            You can import the backup on another device.
+            Everything You Need to Study — Lectures, PDFs & Tests.
+            Download the official app and start learning today.
           </p>
+
+          <a
+            class="btn download"
+            href="https://vidcloud.eu.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Download for Android (APK)
+          </a>
+
         </div>
-
-        <div class="backup-buttons">
-          <button class="btn primary" id="exportBtn">
-            ⬇ Export Backup
-          </button>
-
-          <button class="btn secondary" id="importBtn">
-            ⬆ Import Backup
-          </button>
-
-          <input
-            type="file"
-            id="importFile"
-            accept=".json,application/json"
-            hidden
-          >
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- APP -->
-    <section class="app-section">
-      <div class="app-card">
-
-        <div class="app-logo">
-          <img src="logo.png" alt="Dark Study">
-        </div>
-
-        <div>
-          <span class="eyebrow">DARK STUDY</span>
-          <h2>Everything you need to study.</h2>
-          <p>
-            Lectures, PDFs, tests and useful tools —
-            optimized for mobile learning.
-          </p>
-        </div>
-
-        <button class="btn primary" id="appBtn">
-          Download App
-        </button>
 
       </div>
     </section>
@@ -356,60 +413,42 @@
   </main>
 
 
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- Footer -->
+  <footer>
+    <div class="container">
 
-    <div class="footer-content">
-
-      <div>
-        <div class="brand footer-brand">
-          <img src="logo.png" alt="Dark Study">
-          <span>Dark Study</span>
-        </div>
-
-        <p>
-          Learn. Practice. Succeed.
-        </p>
+      <div class="footer-title">
+        STUDY STARK
       </div>
+
+      <p>
+        The top platform for accessible learning and study resources.
+      </p>
 
       <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#batches">Batches</a>
-        <a href="#lectures">Lectures</a>
-        <a href="#pdfs">PDFs</a>
-        <a href="#tests">Tests</a>
+
+        <a
+          href="https://telegram.me/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Contact Us
+        </a>
+
+        <a
+          href="https://telegram.me/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Telegram Channel
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        Copyright © 2026 Study Stark. All Rights Reserved.
       </div>
 
     </div>
-
-    <div class="copyright">
-      © <span id="year"></span> Dark Study. All Rights Reserved.
-    </div>
-
   </footer>
-
-
-  <!-- MODAL -->
-  <div class="modal" id="modal">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-
-    <div class="modal-box">
-
-      <button class="modal-close" id="modalClose">
-        ×
-      </button>
-
-      <div id="modalContent"></div>
-
-    </div>
-  </div>
-
-
-  <!-- TOAST -->
-  <div class="toast" id="toast"></div>
-
-
-  <script src="script.js"></script>
 
 </body>
 </html>
