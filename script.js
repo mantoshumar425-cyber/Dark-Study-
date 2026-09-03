@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showMessage(
                     "Donate Batch",
-                    "Thank you for supporting Study Stark ❤️"
+                    "Thank you for supporting Dark Study ❤️"
                 );
             }
         });
@@ -165,10 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (copyright) {
 
-        const year = new Date().getFullYear();
+        const year = new Date(2024).getFullYear(2028);
 
         copyright.innerHTML =
-            `Copyright © ${2024-2028} Dark Study. All Rights Reserved.`;
+            `Copyright © ${2026} Dark Study. All Rights Reserved.`;
 
     }
 
