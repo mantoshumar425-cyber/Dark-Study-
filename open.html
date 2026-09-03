@@ -1,0 +1,751 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Study Kit India — Study Hub</title>
+  <meta name="description" content="Study Kit India — Notes, Lectures, Tests and useful study resources for students.">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #697386;
+      --primary: #2563eb;
+      --primary2: #7c3aed;
+      --border: #e6e9f0;
+      --shadow: 0 10px 30px rgba(31, 41, 55, .08);
+    }
+
+    body.dark {
+      --bg: #0b1020;
+      --card: #121a2b;
+      --text: #f4f7ff;
+      --muted: #aab4c8;
+      --border: #25304a;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: .25s;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      height: 70px;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 55px 20px 30px;
+    }
+
+    .hero-box {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(124,58,237,.25), transparent 30%),
+        linear-gradient(135deg, #172554, #312e81);
+      color: white;
+      border-radius: 26px;
+      padding: 45px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 8px 13px;
+      border-radius: 50px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      max-width: 700px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #dbe4ff;
+      max-width: 650px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: white;
+      color: #1e3a8a;
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    /* SEARCH */
+    .search-area {
+      max-width: 1180px;
+      padding: 10px 20px 20px;
+      margin: auto;
+    }
+
+    .search {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 6px;
+      display: flex;
+      box-shadow: var(--shadow);
+    }
+
+    .search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    .search button {
+      border: none;
+      background: var(--primary);
+      color: white;
+      padding: 0 20px;
+      border-radius: 11px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* CONTENT */
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 25px 0 16px;
+    }
+
+    .section-title h2 {
+      font-size: 23px;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      background: rgba(37,99,235,.1);
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      min-height: 42px;
+    }
+
+    .open-btn {
+      margin-top: 15px;
+      display: block;
+      text-align: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* SUBJECTS */
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .subject {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .subject:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .subject-left {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .subject-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(124,58,237,.1);
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+    }
+
+    .subject small {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 11px;
+    }
+
+    /* FEATURE */
+    .feature {
+      margin-top: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .feature h2 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: white;
+      white-space: nowrap;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 45px;
+      border-top: 1px solid var(--border);
+      background: var(--card);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--text);
+    }
+
+    /* NO RESULTS */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .subject-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 0 15px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding: 25px 12px 15px;
+      }
+
+      .hero-box {
+        padding: 28px 22px;
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .search-area,
+      main {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .grid,
+      .subject-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .feature .btn {
+        width: 100%;
+      }
+    }
+  </style></head><body><header>
+  <a href="#" class="logo">
+    <div class="logo-icon">📚</div>
+    <span>Study Kit India</span>
+  </a>  <div class="header-actions">
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+  </div>
+</header><section class="hero">
+  <div class="hero-box">
+    <span class="badge">🎓 Your Digital Study Hub</span><h1>Learn. Practice. Succeed.</h1>
+
+<p>
+  Access notes, lectures, tests and useful learning resources
+  from one simple and student-friendly place.
+</p>
+
+<div class="hero-buttons">
+  <a href="#resources" class="btn btn-white">
+    🚀 Explore Resources
+  </a>
+
+  <a href="#subjects" class="btn btn-outline">
+    📖 Browse Subjects
+  </a>
+</div>
+
+  </div>
+</section><div class="search-area">
+  <div class="search">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search notes, lectures, tests..."
+      autocomplete="off"
+    >
+    <button onclick="searchResources()">Search</button>
+  </div>
+</div><main>  <div class="section-title" id="resources">
+    <h2>Study Resources</h2>
+    <span>Everything in one place</span>
+  </div>  <div class="grid" id="resourceGrid"><div class="card resource" data-search="notes pdf study notes">
+  <div class="card-icon">📄</div>
+  <h3>Notes & PDFs</h3>
+  <p>Read and access your study notes and PDF resources.</p>
+  <a href="#" class="open-btn" onclick="openResource(event,'notes')">
+    Open Now →
+  </a>
+</div>
+
+<div class="card resource" data-search="lectures videos classes">
+  <div class="card-icon">🎥</div>
+  <h3>Lectures</h3>
+  <p>Organize your learning with lecture and video resources.</p>
+  <a href="#" class="open-btn" onclick="openResource(event,'lectures')">
+    Open Now →
+  </a>
+</div>
+
+<div class="card resource" data-search="test practice quiz exam">
+  <div class="card-icon">📝</div>
+  <h3>Tests & Practice</h3>
+  <p>Practice questions and tests to improve your preparation.</p>
+  <a href="#" class="open-btn" onclick="openResource(event,'tests')">
+    Open Now →
+  </a>
+</div>
+
+<div class="card resource" data-search="important questions question bank">
+  <div class="card-icon">⭐</div>
+  <h3>Important Questions</h3>
+  <p>Quickly find important questions for revision.</p>
+  <a href="#" class="open-btn" onclick="openResource(event,'questions')">
+    Open Now →
+  </a>
+</div>
+
+  </div>  <div class="no-results" id="noResults">
+    No matching resources found.
+  </div>  <div class="section-title" id="subjects">
+    <h2>Browse Subjects</h2>
+    <span>Select your subject</span>
+  </div>  <div class="subject-grid"><div class="subject" onclick="subjectOpen('Physics')">
+  <div class="subject-left">
+    <div class="subject-icon">⚡</div>
+    <div>
+      <strong>Physics</strong>
+      <small>Concepts & formulas</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+<div class="subject" onclick="subjectOpen('Chemistry')">
+  <div class="subject-left">
+    <div class="subject-icon">🧪</div>
+    <div>
+      <strong>Chemistry</strong>
+      <small>Reactions & concepts</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+<div class="subject" onclick="subjectOpen('Biology')">
+  <div class="subject-left">
+    <div class="subject-icon">🧬</div>
+    <div>
+      <strong>Biology</strong>
+      <small>Diagrams & concepts</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+<div class="subject" onclick="subjectOpen('Mathematics')">
+  <div class="subject-left">
+    <div class="subject-icon">📐</div>
+    <div>
+      <strong>Mathematics</strong>
+      <small>Questions & solutions</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+<div class="subject" onclick="subjectOpen('English')">
+  <div class="subject-left">
+    <div class="subject-icon">📚</div>
+    <div>
+      <strong>English</strong>
+      <small>Grammar & literature</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+<div class="subject" onclick="subjectOpen('Social Science')">
+  <div class="subject-left">
+    <div class="subject-icon">🌍</div>
+    <div>
+      <strong>Social Science</strong>
+      <small>History, Geo & Civics</small>
+    </div>
+  </div>
+  <span>→</span>
+</div>
+
+  </div>  <div class="feature">
+    <div>
+      <h2>📱 Study Anywhere</h2>
+      <p>
+        Keep your study resources organized and accessible
+        on mobile, tablet and desktop.
+      </p>
+    </div><a href="#" class="btn primary-btn" onclick="appOpen(event)">
+  Open Study Area →
+</a>
+
+  </div></main><footer>
+  <p>
+    <strong>Study Kit India</strong> — Learn. Practice. Succeed.
+  </p>
+  <br>
+  <p>© 2026 Study Kit India. All Rights Reserved.</p>
+</footer><script>
+
+  /* ==========================
+     THEME
+  ========================== */
+
+  const themeBtn = document.getElementById("themeBtn");
+
+  const savedTheme = localStorage.getItem("studyKitTheme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeBtn.textContent = "☀️";
+  }
+
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    const dark = document.body.classList.contains("dark");
+
+    themeBtn.textContent = dark ? "☀️" : "🌙";
+
+    localStorage.setItem(
+      "studyKitTheme",
+      dark ? "dark" : "light"
+    );
+  });
+
+
+  /* ==========================
+     SEARCH
+  ========================== */
+
+  const searchInput = document.getElementById("searchInput");
+  const resources = document.querySelectorAll(".resource");
+  const noResults = document.getElementById("noResults");
+
+  searchInput.addEventListener("input", searchResources);
+
+  function searchResources() {
+
+    const query =
+      searchInput.value
+      .toLowerCase()
+      .trim();
+
+    let found = 0;
+
+    resources.forEach(card => {
+
+      const text =
+        card.dataset.search.toLowerCase();
+
+      if (text.includes(query)) {
+        card.style.display = "";
+        found++;
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+    noResults.style.display =
+      found === 0 ? "block" : "none";
+  }
+
+
+  /* ==========================
+     RESOURCE BUTTONS
+  ========================== */
+
+  function openResource(event, type) {
+
+    event.preventDefault();
+
+    /*
+      Replace these URLs with your own pages.
+
+      Example:
+
+      notes:
+      "notes.html"
+
+      lectures:
+      "lectures.html"
+
+      tests:
+      "tests.html"
+    */
+
+    const pages = {
+
+      notes: "notes.html",
+
+      lectures: "lectures.html",
+
+      tests: "tests.html",
+
+      questions: "questions.html"
+
+    };
+
+    if (pages[type]) {
+      window.location.href = pages[type];
+    }
+
+  }
+
+
+  /* ==========================
+     SUBJECT BUTTONS
+  ========================== */
+
+  function subjectOpen(subject) {
+
+    /*
+      Change these to your real subject URLs.
+    */
+
+    const slug =
+      subject
+      .toLowerCase()
+      .replaceAll(" ", "-");
+
+    window.location.href =
+      "subjects/" + slug + ".html";
+  }
+
+
+  /* ==========================
+     STUDY AREA
+  ========================== */
+
+  function appOpen(event) {
+
+    event.preventDefault();
+
+    /*
+      Change this to your main study page.
+    */
+
+    window.location.href = "study.html";
+  }
+
+</script></body>
+</html>
