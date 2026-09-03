@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const year = new Date().getFullYear();
 
         copyright.innerHTML =
-            `Copyright © ${year} Study Stark. All Rights Reserved.`;
+            `Copyright © ${2024-2028} Dark Study. All Rights Reserved.`;
 
     }
 
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     console.log(
-        "Study Stark website loaded successfully."
+        "Dark Study website loaded successfully."
     );
 
 });
