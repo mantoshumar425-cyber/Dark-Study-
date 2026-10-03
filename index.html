@@ -1,449 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dark Study - Learn. Practice. Succeed.</title>
-
-  <meta name="description"
-        content="Dark Study - Access high-quality study materials, practice tests, lectures and expert guidance in one place.">
-
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Google Search Console Verification -->
-  <meta name="google-site-verification"
-        content="fBdInNr_pxpZjApGXBXYnxqg6Dyy9HJ7jwQC1Yva0Tw">
-
-  <!-- Google AdSense -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5067812901691828"
-    crossorigin="anonymous">
-  </script>
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Study — Your study space</title>
+  <meta name="description" content="Dark Study is a focused space for courses, notes, practice tests and learning resources.">
+  <meta name="theme-color" content="#f7f8fc">
   <link rel="icon" href="logo.png" type="image/png">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111827;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
-    }
-
-    header {
-      padding: 22px 0;
-      border-bottom: 1px solid #eeeeee;
-      background: rgba(255, 255, 255, 0.96);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .login-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 18px;
-      border-radius: 9px;
-      background: #111827;
-      color: #ffffff;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .login-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 75px 0 60px;
-    }
-
-    .tagline {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      display: block;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: #667085;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
-      border-radius: 9px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .primary {
-      background: #111827;
-      color: white;
-    }
-
-    .telegram {
-      background: #eaf6ff;
-      color: #1685d7;
-    }
-
-    .donate {
-      background: #fff0f3;
-      color: #e6395b;
-    }
-
-    .section {
-      padding: 35px 0 70px;
-    }
-
-    .app-card {
-      max-width: 850px;
-      margin: auto;
-      padding: 38px;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      background: #fafafa;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    .logo-box {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 20px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .logo-placeholder {
-      color: #777;
-      font-size: 13px;
-    }
-
-    .app-card h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .app-card p {
-      color: #667085;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .download {
-      background: #111827;
-      color: white;
-    }
-
-    footer {
-      border-top: 1px solid #eeeeee;
-      padding: 35px 0;
-      text-align: center;
-    }
-
-    .footer-title {
-      font-weight: 800;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    footer p {
-      color: #667085;
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 20px;
-    }
-
-    .footer-links a {
-      color: #475467;
-      font-size: 14px;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    .copyright {
-      color: #98a2b3;
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 17px 0;
-      }
-
-      .brand {
-        font-size: 20px;
-      }
-
-      .login-btn {
-        padding: 9px 13px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 55px 0 45px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1.5px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .app-card {
-        padding: 28px 20px;
-      }
-
-      .app-card h2 {
-        font-size: 25px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-
-      <a href="/" class="brand">
-        DARK STUDY
-      </a>
-
-      <a href="#" class="login-btn">
-        Login / Add Batches
-      </a>
-
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Dark Study home"><span class="brand-mark">DS</span><span>Dark Study</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="#dashboard">Dashboard</a>
+        <a href="#resources">Resources</a>
+        <a href="#progress">Progress</a>
+      </nav>
+      <div class="nav-actions"><button class="icon-button" id="themeToggle" aria-label="Toggle dark mode">☾</button><button class="profile" id="loginButton"><span>AK</span><b>Alex Kumar</b><i>⌄</i></button></div>
     </div>
   </header>
 
-  <!-- Main -->
-  <main>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-
-        <div class="tagline">
-          🎓 Learn. Practice. Succeed.
-        </div>
-
-        <h1>
-          Dark Study:
-          <span>Learn More. Achieve More.</span>
-        </h1>
-
-        <p>
-          Access high-quality study materials, practice tests,
-          lectures and expert guidance — all in one place.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            class="btn primary"
-            href="https://vidcloud.eu.org/"
-            target="_blank"
-            rel="noopener noreferrer">
-            🔥 Open Now →
-          </a>
-
-          <a
-            class="btn telegram"
-            href="https://t.me/darkstudy2"
-            target="_blank"
-            rel="noopener noreferrer">
-            Join Telegram
-          </a>
-
-          <a
-            class="btn donate"
-            href="#">
-            ❤️ Donate Batch
-          </a>
-
-        </div>
-
-      </div>
+  <main id="top" class="shell">
+    <section class="welcome" id="dashboard">
+      <div><p class="eyebrow">MONDAY, OCTOBER 3, 2026</p><h1>Keep learning,<br><em>Alex.</em></h1><p class="intro">Small steps every day add up to big results. You&apos;re on a great streak.</p></div>
+      <div class="streak-card"><div class="streak-icon">✦</div><div><strong>12 day streak</strong><span>Keep it going!</span></div><div class="sparkline" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
     </section>
 
-    <!-- App -->
-    <section class="section">
-      <div class="container">
+    <section class="stats" aria-label="Study overview"><article><span class="stat-icon purple">◷</span><div><strong>18.5 hrs</strong><small>Study time this week</small></div><b class="up">+12%</b></article><article><span class="stat-icon orange">✓</span><div><strong>68%</strong><small>Average test score</small></div><b class="up">+8%</b></article><article><span class="stat-icon blue">▣</span><div><strong>24</strong><small>Lessons completed</small></div><b class="up">+5</b></article></section>
 
-        <div class="app-card">
+    <section class="content-grid">
+      <div class="main-column">
+        <div class="section-heading"><div><p class="eyebrow">YOUR COURSES</p><h2>Continue learning</h2></div><a href="#resources">View all <span>→</span></a></div>
+        <div class="course-list"><article class="course-card purple-card"><div class="course-art">∿<span>CALCULUS</span></div><div class="course-body"><div class="course-meta"><span>Mathematics</span><b>72% complete</b></div><h3>Calculus: Limits &amp; Derivatives</h3><p>Next up: The chain rule</p><div class="progress"><span style="width:72%"></span></div><button class="continue" data-course="Calculus: Limits & Derivatives">Continue lesson <span>→</span></button></div></article><article class="course-card peach-card"><div class="course-art">⚛<span>PHYSICS</span></div><div class="course-body"><div class="course-meta"><span>Science</span><b>45% complete</b></div><h3>Mechanics &amp; Motion</h3><p>Next up: Conservation of energy</p><div class="progress"><span style="width:45%"></span></div><button class="continue" data-course="Mechanics & Motion">Continue lesson <span>→</span></button></div></article></div>
 
-          <div class="logo-box">
-
-            <img
-              src="logo.png"
-              alt="Dark Study Logo"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-
-            <span
-              class="logo-placeholder"
-              style="display:none;">
-              Logo
-            </span>
-
-          </div>
-
-          <h2>
-            Dark Study App
-          </h2>
-
-          <p>
-            Everything You Need to Study — Lectures, PDFs & Tests.
-            Download the official app and start learning today.
-          </p>
-
-          <a
-            class="btn download"
-            href="https://vidcloud.eu.org/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Download for Android (APK)
-          </a>
-
-        </div>
-
+        <div class="section-heading resource-heading" id="resources"><div><p class="eyebrow">QUICK ACCESS</p><h2>Study resources</h2></div><div class="resource-filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="notes">Notes</button><button class="filter" data-filter="tests">Tests</button></div></div>
+        <div class="resource-grid"><button class="resource" data-type="notes"><span class="resource-icon lavender">▤</span><strong>Lecture notes</strong><small>12 new notes</small></button><button class="resource" data-type="tests"><span class="resource-icon mint">✓</span><strong>Practice tests</strong><small>8 tests available</small></button><button class="resource" data-type="notes"><span class="resource-icon yellow">▱</span><strong>Saved materials</strong><small>34 items saved</small></button></div>
       </div>
-    </section>
 
+      <aside class="side-column" id="progress"><div class="section-heading"><div><p class="eyebrow">UP NEXT</p><h2>Today&apos;s plan</h2></div><button class="more" aria-label="More options">•••</button></div><div class="plan-card"><div class="plan-item done"><span class="check">✓</span><div><strong>Review lecture notes</strong><small>Calculus · 25 min</small></div><b>Done</b></div><div class="plan-item"><span class="check"></span><div><strong>Complete practice set</strong><small>Mechanics · 40 min</small></div><button class="start" data-course="Practice set">Start</button></div><div class="plan-item"><span class="check"></span><div><strong>Read chapter 5</strong><small>Physics · 30 min</small></div><button class="start" data-course="Chapter 5">Start</button></div><div class="plan-footer"><span>2 of 3 tasks complete</span><div class="progress"><span style="width:66%"></span></div></div></div><div class="quote"><span>“</span><p>Success is the sum of small efforts, repeated day in and day out.</p><small>— Robert Collier</small></div></aside>
+    </section>
   </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-
-      <div class="footer-title">
-        DARK STUDY
-      </div>
-
-      <p>
-        The top platform for accessible learning and study resources.
-      </p>
-
-      <div class="footer-links">
-
-        <a
-          href="https://telegram.me/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Contact Us
-        </a>
-
-        <a
-          href="https://telegram.me/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Telegram Channel
-        </a>
-
-      </div>
-
-      <div class="copyright">
-        Copyright © 2026 Dark Study. All Rights Reserved.
-      </div>
-
-    </div>
-  </footer>
-
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
-
 </body>
 </html>
