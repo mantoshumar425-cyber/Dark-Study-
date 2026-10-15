@@ -1,246 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dark Study - Learn. Practice. Succeed.</title>
-<meta name="description" content="Dark Study - Study materials, lectures, practice tests and learning resources in one place.">
-<meta name="theme-color" content="#111827">
-<meta name="google-site-verification" content="fBdInNr_pxpZjApGXBXYnxqg6Dyy9HJ7jwQC1Yva0Tw">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Dark Study - Study materials, lectures, practice tests and learning resources in one place.">
+  <meta name="google-site-verification" content="fBdInNr_pxpZjApGXBXYnxqg6Dyy9HJ7jwQC1Yva0Tw">
 
-<!-- PWA -->
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Dark Study">
+  <title>Dark Study - Learn. Practice. Succeed.</title>
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5067812901691828" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/icon.svg">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111827;min-height:100vh}
-a{text-decoration:none;color:inherit}
-.container{width:min(1100px,92%);margin:auto}
-header{padding:17px 0;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.brand{font-size:23px;font-weight:800}
-.nav-actions{display:flex;gap:8px;align-items:center}
-.login-btn,.install-btn{border:0;border-radius:9px;padding:11px 14px;background:#111827;color:white;font-weight:700;cursor:pointer}
-.install-btn{background:#2563eb}
-.hero{text-align:center;padding:70px 0 55px}
-.tagline{font-size:18px;font-weight:700;margin-bottom:18px}
-.hero h1{font-size:clamp(36px,7vw,66px);line-height:1.08;letter-spacing:-1.5px;margin-bottom:18px}
-.hero h1 span{display:block}
-.hero p{max-width:650px;margin:0 auto 28px;color:#667085;font-size:17px;line-height:1.7}
-.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:9px;font-weight:700;border:0;cursor:pointer}
-.primary,.download{background:#111827;color:white}
-.telegram{background:#eaf6ff;color:#1685d7}
-.donate{background:#fff0f3;color:#e6395b}
-.section{padding:30px 0 65px}
-.app-card{max-width:850px;margin:auto;padding:35px;border:1px solid #e5e7eb;border-radius:18px;background:#fafafa;text-align:center;box-shadow:0 8px 30px #00000008}
-.logo-box{width:90px;height:90px;margin:0 auto 20px;border-radius:20px;overflow:hidden;background:#111827;color:white;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:25px}
-.logo-box img{width:100%;height:100%;object-fit:cover}
-.app-card h2{font-size:29px;margin-bottom:12px}
-.app-card p{color:#667085;line-height:1.7;margin-bottom:22px}
-.status{font-size:13px!important;margin:14px 0 0!important}
-.install-help{max-width:850px;margin:22px auto 0;padding:22px;border:1px solid #dbeafe;border-radius:16px;background:#eff6ff;line-height:1.8;color:#475467}
-.install-help h3{color:#111827;margin-bottom:8px}
-.install-help ol{padding-left:22px;margin-top:8px}
-footer{border-top:1px solid #eee;padding:34px 0;text-align:center}
-.footer-title{font-weight:800;font-size:18px;margin-bottom:10px}
-footer p{color:#667085;font-size:14px;margin-bottom:14px}
-.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
-.footer-links a{color:#475467;font-size:14px}
-.copyright{color:#98a2b3;font-size:13px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99;background:#111827;color:white;padding:13px 17px;border-radius:12px;width:max-content;max-width:90%;font-size:14px;box-shadow:0 5px 20px #0002}
-[hidden]{display:none!important}
-@media(max-width:600px){
-header{padding:13px 0}.brand{font-size:18px}.nav{gap:6px}
-.nav-actions{gap:5px}.login-btn,.install-btn{font-size:11px;padding:9px}
-.hero{padding:48px 0 40px}.hero h1{letter-spacing:-1px}.hero p{font-size:15px}
-.hero-buttons{flex-direction:column}.btn{width:100%}
-.app-card{padding:26px 17px}.app-card h2{font-size:25px}
-.install-help{padding:18px}
-}
-</style>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dark Study">
+
+  <!-- Existing AdSense publisher code -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5067812901691828"
+    crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --blue: #2563eb;
+      --border: #e5e7eb;
+      --surface: #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; }
+    .container { width: min(1100px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand { font-size: 22px; font-weight: 900; letter-spacing: -.6px; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .login-btn, .install-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 13px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--text);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .install-btn { background: var(--blue); }
+
+    .hero { text-align: center; padding: 72px 0 54px; }
+
+    .tagline { font-weight: 700; margin-bottom: 15px; }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin: 0 0 18px;
+    }
+
+    .hero h1 span { display: block; }
+
+    .hero p {
+      max-width: 660px;
+      margin: 0 auto 27px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 9px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary, .download { background: var(--text); color: white; }
+    .telegram { background: #eaf6ff; color: #1685d7; }
+    .donate { background: #fff0f3; color: #d92d55; }
+
+    .section { padding: 24px 0 60px; }
+
+    .app-card {
+      max-width: 850px;
+      margin: auto;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      text-align: center;
+      box-shadow: 0 8px 30px #00000008;
+    }
+
+    .logo-box {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 18px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+    .app-card h2 { font-size: 28px; margin: 0 0 10px; }
+    .app-card p { color: var(--muted); margin: 0 auto 20px; }
+
+    .status {
+      font-size: 13px;
+      margin: 14px 0 0 !important;
+      overflow-wrap: anywhere;
+    }
+
+    .install-help {
+      max-width: 850px;
+      margin: 22px auto 0;
+      padding: 22px;
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+      background: #eff6ff;
+      color: #475467;
+    }
+
+    .install-help h3 { color: var(--text); margin: 0 0 8px; }
+    .install-help ol { padding-left: 22px; margin-bottom: 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer-title { font-weight: 900; font-size: 18px; }
+    footer p { color: var(--muted); font-size: 14px; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin: 18px 0;
+    }
+
+    .footer-links a { color: #475467; font-size: 14px; }
+    .copyright { color: #98a2b3; font-size: 13px; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      z-index: 99;
+      width: max-content;
+      max-width: 90%;
+      padding: 12px 17px;
+      border-radius: 12px;
+      background: #111827;
+      color: white;
+      box-shadow: 0 5px 20px #0002;
+    }
+
+    [hidden] { display: none !important; }
+
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid #60a5fa;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .nav { min-height: 60px; }
+      .brand { font-size: 17px; }
+      .nav-actions { gap: 5px; }
+      .login-btn, .install-btn { font-size: 11px; padding: 9px; }
+      .hero { padding: 46px 0 38px; }
+      .hero h1 { letter-spacing: -1px; }
+      .hero p { font-size: 15px; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; }
+      .app-card { padding: 25px 17px; }
+      .app-card h2 { font-size: 25px; }
+      .install-help { padding: 18px; }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="container nav">
-    <a href="/" class="brand">DARK STUDY</a>
-    <div class="nav-actions">
-      <button class="install-btn" id="installTop" type="button">⬇ Install App</button>
-      <a href="#" class="login-btn" id="loginBtn">Login / Add Batches</a>
-    </div>
-  </div>
-</header>
+  <header>
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Dark Study home">DARK STUDY</a>
 
-<main>
-<section class="hero">
-  <div class="container">
-    <div class="tagline">🎓 Learn. Practice. Succeed.</div>
-    <h1>Dark Study:<span>Learn More. Achieve More.</span></h1>
-    <p>Access high-quality study materials, practice tests, lectures and expert guidance — all in one place.</p>
-
-    <div class="hero-buttons">
-      <a class="btn primary" href="https://vidcloud.eu.org/" target="_blank" rel="noopener noreferrer">🔥 Open Now →</a>
-      <a class="btn telegram" href="https://t.me/darkstudy2" target="_blank" rel="noopener noreferrer">Join Telegram</a>
-      <a class="btn donate" href="#" id="donateBtn">❤️ Donate Batch</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="app-card">
-      <div class="logo-box" id="logoBox">
-        <img src="/logo.png" alt="Dark Study Logo" onerror="this.remove();document.getElementById('logoBox').textContent='DS';">
+      <div class="nav-actions">
+        <button class="install-btn" id="installTop" type="button">
+          ⬇ Install App
+        </button>
+        <button class="login-btn" id="loginBtn" type="button">
+          Login / Batches
+        </button>
       </div>
-
-      <h2>Dark Study App</h2>
-      <p>Install Dark Study on your phone for quick access from your Home Screen. Open your favourite study resources easily.</p>
-
-      <button class="btn download" id="installMain" type="button">⬇ Install Dark Study</button>
-      <p class="status" id="installStatus" aria-live="polite">Check whether your browser supports direct installation.</p>
     </div>
+  </header>
 
-    <div class="install-help" id="installHelp">
-      <h3>📲 How to Install Dark Study</h3>
-      <p>If the direct install prompt is unavailable, follow these steps:</p>
-      <ol>
-        <li><strong>Android / Chrome:</strong> Tap the three-dot menu ⋮ and select “Install app” or “Add to Home screen”.</li>
-        <li><strong>iPhone / Safari:</strong> Tap Share, then select “Add to Home Screen”.</li>
-        <li>Make sure the website is hosted on HTTPS.</li>
-      </ol>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tagline">🎓 Learn. Practice. Succeed.</div>
+
+        <h1>Dark Study:<span>Learn More. Achieve More.</span></h1>
+
+        <p>
+          Access study materials, practice tests, lectures and learning
+          resources — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn primary"
+             href="https://vidcloud.eu.org/"
+             target="_blank" rel="noopener noreferrer">
+            🔥 Open Now →
+          </a>
+
+          <a class="btn telegram"
+             href="https://t.me/darkstudy2"
+             target="_blank" rel="noopener noreferrer">
+            Join Telegram
+          </a>
+
+          <button class="btn donate" id="donateBtn" type="button">
+            ❤️ Donate Batch
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="app-card">
+          <div class="logo-box">
+            <img src="/icons/icon.svg" alt="Dark Study app icon"
+                 width="90" height="90">
+          </div>
+
+          <h2>Dark Study App</h2>
+
+          <p>
+            Add Dark Study to your Home Screen for quick access to
+            your favourite learning resources.
+          </p>
+
+          <button class="btn download" id="installMain" type="button">
+            ⬇ Install Dark Study
+          </button>
+
+          <p class="status" id="installStatus" aria-live="polite">
+            Checking installation availability…
+          </p>
+        </div>
+
+        <div class="install-help" id="installHelp">
+          <h3>📲 How to Install Dark Study</h3>
+          <p>If the direct installation prompt is unavailable:</p>
+          <ol>
+            <li><strong>Android / Chrome:</strong> Open the browser menu ⋮ and select Install app or Add to Home screen.</li>
+            <li><strong>iPhone / Safari:</strong> Tap Share, then Add to Home Screen.</li>
+            <li>Use the website over HTTPS.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-title">DARK STUDY</div>
+      <p>Study materials and learning resources in one place.</p>
+
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://t.me/darkstudy2" target="_blank" rel="noopener noreferrer">Contact Us</a>
+        <a href="https://t.me/darkstudy2" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+      </nav>
+
+      <div class="copyright">
+        Copyright © <span id="year"></span> Dark Study. All Rights Reserved.
+      </div>
     </div>
-  </div>
-</section>
-</main>
+  </footer>
 
-<footer>
-  <div class="container">
-    <div class="footer-title">DARK STUDY</div>
-    <p>The top platform for accessible learning and study resources.</p>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-    <div class="footer-links">
-      <a href="https://t.me/darkstudy2" target="_blank" rel="noopener noreferrer">Contact Us</a>
-      <a href="https://t.me/darkstudy2" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms &amp; Conditions</a>
-    </div>
+  <script>
+  (() => {
+    "use strict";
 
-    <div class="copyright">Copyright © <span id="year"></span> Dark Study. All Rights Reserved.</div>
-  </div>
-</footer>
+    const installButtons = [
+      document.getElementById("installTop"),
+      document.getElementById("installMain")
+    ];
 
-<div class="toast" id="toast" role="status" hidden></div>
+    const status = document.getElementById("installStatus");
+    const help = document.getElementById("installHelp");
+    const toast = document.getElementById("toast");
 
-<script>
-(() => {
-  const buttons = [
-    document.getElementById("installTop"),
-    document.getElementById("installMain")
-  ];
+    let deferredPrompt = null;
+    let toastTimer;
 
-  const status = document.getElementById("installStatus");
-  const help = document.getElementById("installHelp");
-  const toast = document.getElementById("toast");
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-  let installPrompt = null;
-  let toastTimer;
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function notify(message) {
-    toast.textContent = message;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.hidden = true, 4000);
-  }
-
-  function isInstalled() {
-    return window.matchMedia("(display-mode: standalone)").matches ||
-           window.navigator.standalone === true;
-  }
-
-  function updateInstalledState() {
-    if (isInstalled()) {
-      buttons.forEach(button => button.hidden = true);
-      status.textContent = "Dark Study is installed. Open it from your Home Screen.";
-      help.hidden = true;
-      return true;
+    function notify(message) {
+      toast.textContent = message;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.hidden = true;
+      }, 4000);
     }
-    return false;
-  }
 
-  async function installApp() {
-    if (updateInstalledState()) return;
+    function isInstalled() {
+      return window.matchMedia("(display-mode: standalone)").matches ||
+             window.navigator.standalone === true;
+    }
 
-    if (installPrompt) {
-      installPrompt.prompt();
-      const result = await installPrompt.userChoice;
-
-      if (result.outcome === "accepted") {
-        status.textContent = "Installation accepted. Follow the browser prompt to finish.";
-        notify("Follow the prompt to install Dark Study.");
-      } else {
-        notify("Installation cancelled. You can try again later.");
+    function updateInstallState() {
+      if (isInstalled()) {
+        installButtons.forEach(button => button.hidden = true);
+        status.textContent = "Dark Study is installed on this device.";
+        help.hidden = true;
+        return true;
       }
 
-      installPrompt = null;
-      return;
+      return false;
     }
 
-    status.textContent = "Direct installation is not available in this browser right now. Use the browser menu to install.";
-    help.hidden = false;
-    notify("Open browser menu ⋮ and select Install app / Add to Home screen.");
-  }
+    async function installApp() {
+      if (updateInstallState()) {
+        notify("Dark Study is already installed.");
+        return;
+      }
 
-  buttons.forEach(button => button.addEventListener("click", installApp));
+      if (!deferredPrompt) {
+        status.textContent =
+          "Direct installation is not available right now. Use the browser menu below.";
+        help.hidden = false;
+        notify("Open browser menu ⋮ and look for Install app.");
+        return;
+      }
 
-  window.addEventListener("beforeinstallprompt", event => {
-    event.preventDefault();
-    installPrompt = event;
+      deferredPrompt.prompt();
 
-    if (!updateInstalledState()) {
-      status.textContent = "Ready to install! Tap Install Dark Study.";
-      buttons.forEach(button => button.hidden = false);
+      try {
+        const result = await deferredPrompt.userChoice;
+
+        if (result.outcome === "accepted") {
+          status.textContent = "Installation accepted. Follow your browser's instructions.";
+          notify("Follow the browser prompt to finish installation.");
+        } else {
+          notify("Installation cancelled. You can try again later.");
+        }
+      } catch (error) {
+        notify("Please use your browser menu to install the app.");
+      }
+
+      deferredPrompt = null;
     }
-  });
 
-  window.addEventListener("appinstalled", () => {
-    installPrompt = null;
-    buttons.forEach(button => button.hidden = true);
-    status.textContent = "Dark Study was installed successfully.";
-    notify("Dark Study installed successfully!");
-  });
-
-  if ("serviceWorker" in navigator && location.protocol === "https:") {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/sw.js")
-        .catch(error => console.error("Service worker error:", error));
+    installButtons.forEach(button => {
+      button.addEventListener("click", installApp);
     });
-  }
 
-  if (!updateInstalledState()) {
-    status.textContent = "Install Dark Study for quick Home Screen access. If no prompt appears, follow the instructions below.";
-  }
+    window.addEventListener("beforeinstallprompt", event => {
+      event.preventDefault();
+      deferredPrompt = event;
 
-  document.getElementById("loginBtn").addEventListener("click", event => {
-    event.preventDefault();
-    notify("Login is not connected yet.");
-  });
+      if (!updateInstallState()) {
+        status.textContent = "Ready to install! Tap Install Dark Study.";
+        installButtons.forEach(button => button.hidden = false);
+      }
+    });
 
-  document.getElementById("donateBtn").addEventListener("click", event => {
-    event.preventDefault();
-    notify("Add your official donation link to enable donations.");
-  });
-})();
-</script>
+    window.addEventListener("appinstalled", () => {
+      deferredPrompt = null;
+      installButtons.forEach(button => button.hidden = true);
+      status.textContent = "Dark Study was installed successfully.";
+      notify("Dark Study installed successfully!");
+    });
+
+    if ("serviceWorker" in navigator &&
+        (location.protocol === "https:" || location.hostname === "localhost")) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+          .then(() => console.log("Dark Study service worker registered."))
+          .catch(error => console.error("Service worker registration failed:", error));
+      });
+    }
+
+    if (!updateInstallState()) {
+      status.textContent =
+        "Install Dark Study for quick access. If no prompt appears, follow the instructions below.";
+    }
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      notify("Login is not connected yet.");
+    });
+
+    document.getElementById("donateBtn").addEventListener("click", () => {
+      notify("Donation is not configured yet. Add your official donation link.");
+    });
+  })();
+  </script>
 </body>
 </html>
